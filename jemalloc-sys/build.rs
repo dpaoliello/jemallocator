@@ -379,7 +379,7 @@ fn make_command(make_cmd: &str, build_dir: &Path, num_jobs: &str) -> Command {
 
 fn run_and_log(cmd: &mut Command, log_file: &Path) {
     execute(cmd, || {
-        run(Command::new("tail").arg("-n").arg("100").arg(log_file));
+        run(Command::new("cat").arg(log_file));
     })
 }
 
